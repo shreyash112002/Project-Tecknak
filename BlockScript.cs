@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlockScript : MonoBehaviour
 {
     private float min_X = -10.27f;
-    private float max_X = 10.27f;
+   
     private bool canMove;
     private float move_Speed=2f;
     private Rigidbody2D myBody;
@@ -15,6 +15,7 @@ public class BlockScript : MonoBehaviour
     void Awake()
     {
         myBody= GetComponent<Rigidbody2D>();
+        myBody.gravityScale = 0f;
 
     }
 
@@ -23,8 +24,9 @@ public class BlockScript : MonoBehaviour
     {
         canMove=true;
         if(Random.Range(0,2)>0){
-            move_Speed*=-1f;
+            move_Speed*=1f;
         }
+       // GamePlayController.instance.currentBlock= this;
     }
 
     // Update is called once per frame
@@ -38,15 +40,18 @@ public class BlockScript : MonoBehaviour
     {
     Vector3 temp =transform.position;
     temp.x += move_Speed  *Time.deltaTime;
-   if(temp.x>max_X)
-   {
-       move_Speed *= -1f;
-   }
-   else if(temp.x<min_X)
+   if(temp.x<min_X)
    {
        move_Speed *= -1f;
    }
    transform.position =temp;
+
     }
+    }
+    public void DropBlock()
+    {
+        canMove = false;
+        myBody.gravityScale = Random.Range(0,4);
+
     }
 }
