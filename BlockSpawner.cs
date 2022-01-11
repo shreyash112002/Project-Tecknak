@@ -5,12 +5,8 @@ using UnityEngine;
 public class BlockSpawner : MonoBehaviour
 {
     public GameObject block_Prefab;
-
-    void Start()
-    {
-        SpawnBlock();
-
-    }
+     
+  
     public void SpawnBlock()
     {
         GameObject block_obj =Instantiate(block_Prefab);

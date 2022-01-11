@@ -7,6 +7,7 @@ using System.Runtime.Serialization;
 
 public class Spawners : MonoBehaviour
 {
+    
     [SerializeField] GameObject[] Blocksprefab;
     [SerializeField] float secondSpawn=0.5f;
     [SerializeField] float minTras;

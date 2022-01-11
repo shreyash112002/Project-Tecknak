@@ -9,14 +9,18 @@ public class CharacterMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       /* Debug.Log(Input.GetAxisRaw("Vertical"));
-        Vector3 moveposition = new Vector3(0f,Input.GetAxisRaw("Vertical"),0f);
-        transform.position += moveposition * MoveSpeed* Time.deltaTime; */ 
+        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Vector3 moveposition = new Vector3(Input.GetAxisRaw("Horizontal"),0f,0f);
+        transform.position += moveposition * MoveSpeed* Time.deltaTime;
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            rb.AddForce(new Vector2(0f,8f),ForceMode2D.Impulse);
+        } 
     }
 }

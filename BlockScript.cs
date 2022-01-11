@@ -6,7 +6,7 @@ public class BlockScript : MonoBehaviour
 {
     private float min_X = -10.27f;
    
-    private bool canMove;
+    public static bool canMove;
     private float move_Speed=2f;
     private Rigidbody2D myBody;
     private bool gameOver;
@@ -33,6 +33,7 @@ public class BlockScript : MonoBehaviour
     void Update()
     {
         MoveBlock();
+        Debug.Log(canMove);
     }
     void MoveBlock()
     {

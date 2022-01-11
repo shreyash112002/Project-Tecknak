@@ -6,15 +6,15 @@ using UnityEngine.UI;
 
 public class GamePlayController : MonoBehaviour
 {
-    public GameOverScreen GameOverScreen;
-    int maxPlatform=0;
+  //  public GameOverScreen GameOverScreen;
+    //int maxPlatform=0;
      public static GamePlayController instance;
      public BlockSpawner block_Spawner;
   
-    public void GameOver()
+  /*  public void GameOver()
      {
          GameOverScreen.Setup(maxPlatform);
-          }
+          }*/
    void Awake()
    {
        if(instance== null)
